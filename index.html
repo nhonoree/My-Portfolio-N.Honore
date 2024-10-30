@@ -214,7 +214,8 @@
                     <a href="/image/honore cv updated.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form action="" name="submit-to-google-sheet">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="0ea1fc70-6d6a-4df8-be2f-636f3be95fea">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message" id="" required></textarea>
@@ -258,7 +259,7 @@
         }
     </script>
 
-    <script>
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxHWDNM7wU3p9HYWkRZTvujg8mUSC3N6N4Qi25yDPPAttoEl7G0FCHgmWDuCYb-wlnPFw/exec'
         const form = document.forms['submit-to-google-sheet']
 
@@ -268,7 +269,7 @@
             .then(response => console.log('Success!', response))
             .catch(error => console.error('Error!', error.message))
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
