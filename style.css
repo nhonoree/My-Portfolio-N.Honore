@@ -630,9 +630,9 @@ footer {
   color: #aaa;
   font-size: 0.9rem;
 }
-
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
+  /* Tablet Styles */
   .header-text h1 {
     font-size: 2.5rem;
   }
@@ -656,18 +656,55 @@ footer {
 }
 
 @media (max-width: 600px) {
+  /* Mobile Styles (Phones) */
+  /* Header adjustments */
+  #header {
+    padding: 0 5%;
+    min-height: 90vh;
+  }
+
+  .header-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 100px;
+    padding: 0 5%;
+  }
+
+  .header-text h1 {
+    font-size: 2.2rem;
+    margin: 0.5rem 0;
+  }
+
+  .header-text p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+  }
+
+  /* Navigation */
   nav {
     padding: 15px 5%;
   }
-  
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
   nav ul {
     position: fixed;
     top: 0;
-    right: -200px;
-    width: 200px;
+    right: -70%;
+    width: 70%;
     height: 100vh;
     background: var(--card-bg);
-    padding-top: 50px;
+    padding-top: 70px;
     z-index: 2;
     transition: right 0.5s;
   }
@@ -678,32 +715,172 @@ footer {
   
   nav ul li {
     display: block;
-    margin: 25px;
-  text-align: center;
+    margin: 20px;
+    text-align: center;
   }
   
   nav .fas {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
-  
-  .header-text {
-    margin-top: 80px;
+
+  /* About section */
+  #about {
+    padding: 60px 0;
   }
-  
-  .services-list,
+
+  .about-col-1 img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .sub-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .tab-titles {
+    margin: 20px 0;
+  }
+
+  .tab-links {
+    margin-right: 20px;
+    font-size: 1rem;
+  }
+
+  /* Services slider */
+  .services-slider-wrapper {
+    padding: 0 20px;
+  }
+
+  .service-card {
+    padding: 25px;
+    flex: 0 0 85%;
+  }
+
+  .slider-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  /* Portfolio */
   .work-list {
     grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
   }
-  
-  /* .copyright {
-    font-size: 0.8rem;
-  } */
+
+  .work img {
+    height: 200px;
+  }
+
+  /* Contact section */
+  #contact {
+    padding: 60px 0 30px;
+  }
+
+  .contact-left, 
+  .contact-right {
+    flex: 1 1 100%;
+  }
+
+  .contact-right {
+    margin-top: 30px;
+  }
+
+  form input,
+  form textarea {
+    padding: 12px;
+  }
+
+  /* Footer */
   .copyright {
+    font-size: 0.8rem;
+    padding: 15px 0;
     text-align: center;
-    padding-top: 20px;
     border-top: 1px solid #444;
     color: #aaa;
-    font-size: 0.9rem;
+  }
 }
+
+@media (max-width: 400px) {
+  /* Extra Small Phones */
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-text p {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  .sub-title {
+    font-size: 1.6rem;
+  }
+  
+  nav ul {
+    width: 80%;
+    right: -80%;
+  }
+}
+@media (max-width: 600px) {
+  /* Mobile menu styles */
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    background: var(--card-bg);
+    padding-top: 70px;
+    z-index: 2;
+    transition: right 0.5s ease;
+    margin: 0;
+  }
+
+  nav ul.show {
+    right: 0;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+    text-align: center;
+  }
+
+  /* Menu toggle buttons */
+  .fa-bars, 
+  .fa-times {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3;
+    color: var(--primary-color);
+  }
+
+  .fa-times {
+    display: none;
+  }
+
+  /* When menu is open */
+  nav ul.show ~ .fa-bars {
+    display: none;
+  }
+  
+  nav ul.show ~ .fa-times {
+    display: block;
+  }
 }
