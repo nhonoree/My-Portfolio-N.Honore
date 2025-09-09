@@ -261,45 +261,45 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
   <script>
-  //   const phoneInput = document.querySelector("#phone");
+    const phoneInput = document.querySelector("#phone");
 
-  //   // Initialize intl-tel-input with Rwanda as default
-  //   const iti = window.intlTelInput(phoneInput, {
-  //     initialCountry: "rw", // Rwanda 🇷🇼
-  //     separateDialCode: true, // show dial code separately
-  //     preferredCountries: ["rw", "us", "gb"], // show top in dropdown
-  //     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-  //   });
+    // Initialize intl-tel-input with Rwanda as default
+    const iti = window.intlTelInput(phoneInput, {
+      initialCountry: "rw", // Rwanda 🇷🇼
+      separateDialCode: true, // show dial code separately
+      preferredCountries: ["rw", "us", "gb"], // show top in dropdown
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
 
-  //   // Restrict input: only numbers, +, -, space
-  //   phoneInput.addEventListener("input", function () {
-  //     this.value = this.value.replace(/[^0-9+\-\s]/g, "");
-  //   });
+    // Restrict input: only numbers, +, -, space
+    phoneInput.addEventListener("input", function () {
+      this.value = this.value.replace(/[^0-9+\-\s]/g, "");
+    });
 
-  //   // Handle form submission
-  //   document.querySelector("#contactForm").addEventListener("submit", function(e) {
-  //     e.preventDefault(); // remove if using real backend
+    // Handle form submission
+    document.querySelector("#contactForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // remove if using real backend
 
-  //     // Validate phone number
-  //     if (!iti.isValidNumber()) {
-  //       alert("Please enter a valid phone number.");
-  //       return;
-  //     }
+      // Validate phone number
+      if (!iti.isValidNumber()) {
+        alert("Please enter a valid phone number.");
+        return;
+      }
 
-  //     // Replace input value with full international number
-  //     phoneInput.value = iti.getNumber();
+      // Replace input value with full international number
+      phoneInput.value = iti.getNumber();
 
-  //     // Show success message
-  //     const successMsg = document.getElementById("formSuccess");
-  //     successMsg.style.display = "block";
+      // Show success message
+      const successMsg = document.getElementById("formSuccess");
+      successMsg.style.display = "block";
 
-  //     // Reset form after 3 seconds
-  //     setTimeout(function () {
-  //       document.getElementById("contactForm").reset();
-  //       successMsg.style.display = "none";
-  //     }, 3000);
-  //   });
-  // </script>
+      // Reset form after 3 seconds
+      setTimeout(function () {
+        document.getElementById("contactForm").reset();
+        successMsg.style.display = "none";
+      }, 3000);
+    });
+  </script>
 </section>
 
 
@@ -309,6 +309,37 @@
       <p>&copy; 2025 N.Honore. All Rights Reserved.</p>
     </div>
   </footer>
+  <script>
+    const menuBtn = document.querySelector(".fa-bars");
+  const closeBtn = document.querySelector(".fa-times");
+  const navMenu = document.querySelector("nav ul");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.add("show");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+  });
+
+</script>
+<script>
+  let autoSlide = setInterval(() => {
+  const slider = document.querySelector('.services-slider');
+  slider.scrollBy({ left: 310, behavior: 'smooth' }); // 300px card + 10px gap
+}, 3000); // 3 seconds per slide
+
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+</script>
 
   <script src="script.js"></script>
 </body>
